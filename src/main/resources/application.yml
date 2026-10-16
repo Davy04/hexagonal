@@ -1,0 +1,8 @@
+woolley:
+  client:
+    address:
+      url: http://localhost:8082/addresses
+
+spring:
+  mongodb:
+    uri: mongodb://localhost:27017/hexagonal
