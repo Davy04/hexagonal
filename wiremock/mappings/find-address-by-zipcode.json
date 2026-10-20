@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/addresses/[0-9]+"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "street": "Rua Hexagonal",
+      "city": "Sao Paulo",
+      "state": "SP"
+    }
+  }
+}
