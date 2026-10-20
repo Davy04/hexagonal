@@ -1,5 +1,5 @@
 package com.woolley.hexagonal.application.ports.out;
 
-public interface SendCpfForValidationOutpuPort {
+public interface SendCpfForValidationOutputPort {
     void send(String cpf);
 }

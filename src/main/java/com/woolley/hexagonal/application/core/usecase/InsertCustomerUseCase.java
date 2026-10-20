@@ -4,7 +4,7 @@ import com.woolley.hexagonal.application.core.domain.Customer;
 import com.woolley.hexagonal.application.ports.in.InsertCustomerInputPort;
 import com.woolley.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.woolley.hexagonal.application.ports.out.InsertCustomerOutputPort;
-import com.woolley.hexagonal.application.ports.out.SendCpfForValidationOutpuPort;
+import com.woolley.hexagonal.application.ports.out.SendCpfForValidationOutputPort;
 
 public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
@@ -12,13 +12,13 @@ public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
     private final InsertCustomerOutputPort insertCustomerOutputPort;
 
-    private final SendCpfForValidationOutpuPort sendCpfForValidationOutpuPort;
+    private final SendCpfForValidationOutputPort sendCpfForValidationOutputPort;
 
-    public InsertCustomerUseCase(FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort, InsertCustomerOutputPort insertCustomerOutputPort, SendCpfForValidationOutpuPort sendCpfForValidationOutpuPort)
+    public InsertCustomerUseCase(FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort, InsertCustomerOutputPort insertCustomerOutputPort, SendCpfForValidationOutputPort sendCpfForValidationOutputPort)
     {
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
         this.insertCustomerOutputPort = insertCustomerOutputPort;
-        this.sendCpfForValidationOutpuPort = sendCpfForValidationOutpuPort;
+        this.sendCpfForValidationOutputPort = sendCpfForValidationOutputPort;
     }
 
     @Override
@@ -26,6 +26,6 @@ public class InsertCustomerUseCase implements InsertCustomerInputPort {
         var address = findAddressByZipCodeOutputPort.find(zipCode);
         customer.setAddress(address);
         insertCustomerOutputPort.Insert(customer);
-        sendCpfForValidationOutpuPort.send(customer.getCpf());
+        sendCpfForValidationOutputPort.send(customer.getCpf());
     }
 }
