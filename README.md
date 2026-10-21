@@ -2,8 +2,6 @@
 
 API REST de cadastro de clientes feita com **Java 21 + Spring Boot 4**, organizada em **Arquitetura Hexagonal (Ports & Adapters)**. Usa **MongoDB** como banco, **Kafka** para mensageria, uma API externa de CEP (simulada com **WireMock**) e **ArchUnit** para garantir que a arquitetura seja respeitada.
 
-> Projeto construído acompanhando o curso *"Arquitetura Hexagonal/Ports and Adapters NA PRÁTICA"* (Danilo Arantes).
-
 ---
 
 ## Sumário
